@@ -1,0 +1,34 @@
+<!--modal update-->
+<div class="modal-colored-primary modal fade show" id="modal-update-{{producto.id}}" tabindex="-1" role="dialog" aria-hidden="true">
+            {{>'productosUpdate' producto = producto categorias = categorias proveedores = proveedores}}
+</div>
+
+<!--modal deleate-->
+<div class="modal-colored-danger modal fade show" id="modal-deleate-{{producto.id}}" tabindex="-1" role="dialog" aria-hidden="true">
+            {{>'productosDeleate' producto = producto}}
+</div>
+
+<tr>
+   <td>
+      <div class="userDatatable-content">{{producto.descripcion}}</div>
+   </td>
+   <td>
+      <div class="userDatatable-content">
+         {{producto.precio}}
+      </div>
+   </td>
+   <td>
+      <ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
+         <li>
+            <a href="#" class="edit" data-bs-toggle="modal" data-bs-target="#modal-update-{{producto.id}}">
+               <i class="uil uil-edit"></i>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="remove" data-bs-toggle="modal" data-bs-target="#modal-deleate-{{producto.id}}">
+               <i class="uil uil-trash-alt"></i>
+            </a>
+         </li>
+      </ul>
+   </td>
+</tr>

@@ -1,0 +1,73 @@
+<div class="modal-dialog modal-md" role="document">
+   <div class="modal-content modal-bg-primary modal-colored">
+      <div class="modal-header">
+         <h6 class="modal-title">Actualizar Producto</h6>
+         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <img src="img/svg/x.svg" alt="x" class="svg">
+         </button>
+      </div>
+      <div class="modal-body">
+         <form>
+            <div class="container-fluid">
+               <div class="row mb-2">
+                     <p>Descripciones</p>
+               </div>
+               <div class="mb-2">
+                     <input type="text" class="form-control form-control-lg" value="{{producto.descripcion}}">
+               </div>
+               <div class="row mb-2">
+                  <div class="col">
+                     <p>Categoria</p>
+                  </div>
+                  <div class="col">
+                     <p>Proveedor</p>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col">
+                     <div class="dm-select ">
+                        <select name="select-1" id="categoria" class="form-control">
+                           {{#each categorias}}
+                              {{#if (isSame descripcion ../producto.categoria)}}
+                                 <option selected="selected">{{descripcion}}</option>
+                              {{else}}
+                                 <option>{{descripcion}}</option>
+                              {{/if}}
+                           {{/each}}
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col">
+                     <div class="dm-select ">
+                        <select name="select-1" id="distribuidor" class="form-control">
+                           {{#each proveedores}}
+                              {{#if (isSame nombre ../producto.proveedor)}}
+                                 <option selected="selected">{{nombre}}</option>
+                              {{else}}
+                                 <option>{{nombre}}</option>
+                              {{/if}}
+                           {{/each}}
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <p>Precio</p>
+               </div>
+               <div class="row mb-2">
+                  <div class="col">
+                     <input type="text" class="form-control form-control-lg" value="{{producto.precio}}">
+                  </div>
+                  <div class="col"></div>
+                  <div class="col"></div>
+                  <div class="col"></div>
+               </div>
+            </div>
+         </form>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-primary btn-sm">Actualizar</button>
+         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+   </div>
+</div>
